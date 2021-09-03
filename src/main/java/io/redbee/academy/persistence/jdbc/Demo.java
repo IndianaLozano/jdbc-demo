@@ -13,17 +13,26 @@ public class Demo {
 
     public static final String APP_CREATION_USER = "jdbc-demo-app";
 
+
+    // Connection to database, user and password:
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/movies";
     private static final String DB_USER = "postgres";
     private static final String DB_PASSWORD = "postgres";
+    //This database is executed with Docker
 
     public static void main(String[] args) {
+        //Create the connection
         getConnection().ifPresent(connection -> {
             RawSelect.with(connection).execute();
+
             PreparedStatementSelect.with(connection).execute();
+
             PreparedStatementInsert.with(connection).execute();
+
             SuccessfulTransaction.with(connection).execute();
+
             RollbackTransaction.with(connection).execute();
+
             close(connection);
         });
     }
