@@ -3,10 +3,10 @@ package io.redbee.academy.persistence.jdbc.domain;
 public class Movie {
 
     // is ok to make these following attributes 'private'?
-    private static Integer id;
-    private static String title;
-    private static Integer year;
-    private static String creation_user;
+    private Integer id;
+    private String title;
+    private Integer year;
+    private String creation_user;
 
     public Movie(Integer id, String title, Integer year, String creation_user){
         this.id = id;
@@ -15,41 +15,45 @@ public class Movie {
         this.creation_user = creation_user;
     }
 
-    public static Integer getId() {
+    public Integer getId() {
         return id;
     }
 
-    public static void setId(Integer id) {
-        Movie.id = id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public static String getTitle() {
+    public String getTitle() {
         return title;
     }
 
-    public static void setTitle(String title) {
-        Movie.title = title;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public static Integer getYear() {
+    public Integer getYear() {
         return year;
     }
 
-    public static void setYear(Integer year) {
-        Movie.year = year;
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
-    public static String getCreation_user() {
+    public String getCreation_user() {
         return creation_user;
     }
 
-    public static void setCreation_user(String creation_user) {
-        Movie.creation_user = creation_user;
+    public void setCreation_user(String creation_user) {
+        this.creation_user = creation_user;
     }
 
-    public static String toString(Movie movie){
-        return "Movie{id = " + id + ", title = " + title + ", year = " + year + ", creation_user = " + creation_user + '}';
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", year=" + year +
+                ", creation_user='" + creation_user + '\'' +
+                '}';
     }
-
-
 }

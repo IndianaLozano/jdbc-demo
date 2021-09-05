@@ -43,7 +43,7 @@ public class PreparedStatementSelect {
 
                 //log.info("\t id: {}, title: {}, year: {}, creation_user: {}", id, title, year, creation_user);
                 final Movie movie = new Movie(id, title, year, creation_user);
-                log.info("\n Película obtenida:" + Movie.toString(movie));
+                log.info("\n Película obtenida:" + movie.toString());
             }
 
             resultSet.close();
